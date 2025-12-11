@@ -3,13 +3,26 @@
 {% block content %}
   <h1>Manufacturers</h1>
   {% if manufacturer_list %}
-    <ul>
+    <table class="table table-striped" >
+      <tr>
+        <th>
+          manufacturer name
+        </th>
+        <th>
+          manufacturer id
+        </th>
+      </tr>
       {% for manufacturer in manufacturer_list %}
-        <li>
-          <a href={% url "taxi:manufacturer-detail" manufacturer.pk %}>{{ manufacturer.name }}</a>
-        </li>
+        <tr>
+          <td>
+            {{ manufacturer.name }}
+          </td>
+          <td>
+            {{ manufacturer.pk }}
+          </td>
+        </tr>
       {% endfor %}
-    </ul>
+    </table>
   {% endif %}
 
 {% endblock %}
