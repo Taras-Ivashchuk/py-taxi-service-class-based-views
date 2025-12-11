@@ -3,7 +3,7 @@
 {% block content %}
   <h1>Drivers</h1>
   {% if driver_list %}
-    <table class="table table-stripped ">
+    <table class="table table-striped">
       <tr>
         <th>
           driver id
@@ -15,12 +15,12 @@
       {% for driver in driver_list %}
         <tr>
           <td>
-            <a href={% url "taxi:driver-detail" driver.pk %}>
-              {{ driver.pk }}
-            </a>
+            {{ driver.pk }}
           </td>
           <td>
-            {{ driver.username }}
+            <a href={% url "taxi:driver-detail" driver.pk %}>
+              {{ driver.username }}
+            </a>
           </td>
         </tr>
       {% endfor %}

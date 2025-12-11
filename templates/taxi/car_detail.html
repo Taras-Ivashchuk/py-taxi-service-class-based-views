@@ -6,13 +6,13 @@
   <p><strong>country: </strong>{{ car.manufacturer.country }}</p>
   <div class="ml-3">
     <h3>drivers</h3>
-    {% for driver in car.drivers.all %}
-      <ul>
+    <ul>
+      {% for driver in car.drivers.all %}
         <hr>
         <p class="text-muted">first name: {{ driver.first_name }}</p>
         <p class="text-muted">last name: {{ driver.last_name }}</p>
         <p class="text-muted">license number: {{ driver.license_number }}</p>
-      </ul>
-    {% endfor %}
+      {% endfor %}
+    </ul>
   </div>
 {% endblock %}
